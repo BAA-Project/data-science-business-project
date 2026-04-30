@@ -197,7 +197,6 @@ The model captures both daily patterns and seasonal structure.
 
 ## Project Structure
 
-```text
 project/
   VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx   # Input dataset
   analysis_script.py                                          # Main analysis and forecasting script
