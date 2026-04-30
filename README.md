@@ -196,6 +196,7 @@ The model captures both daily patterns and seasonal structure.
 ---    
 
 project/
+
 │
 ├── data.xlsx
 ├── analysis_script.py
@@ -207,10 +208,10 @@ project/
 │   ├── 33_*.png
 │   ├── *.csv
 
----
 
 ---
 Technologies Used:
+
 Python
 Pandas, NumPy
 Matplotlib
@@ -221,6 +222,7 @@ OpenPyXL
 
 ---
 👥 Team Members
+
 Balázs Bence Balázs
 Kupcsik András
 Abigail Wanjiru Kamau
