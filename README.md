@@ -194,9 +194,9 @@ The model captures both daily patterns and seasonal structure.
     Open PNG files in numeric order (01–33)
     
 ---    
-
+```md
 ## Project Structure
-
+```text
 project/
   VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx   # Input dataset
   analysis_script.py                                          # Main analysis and forecasting script
@@ -211,7 +211,7 @@ project/
 
 ---
 
-##Technologies Used:
+Technologies Used:
 
 Python
 Pandas, NumPy
@@ -222,7 +222,7 @@ XGBoost
 OpenPyXL
 
 ---
-## Team Members
+ Team Members
 
 - Balázs Bence Balázs
 - Kupcsik András
