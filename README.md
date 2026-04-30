@@ -1,26 +1,41 @@
-# Hungarian Electricity Net Import Analysis & Forecasting
-This project presents an end‑to‑end data analysis and forecasting pipeline focused on Hungary’s electricity net import dependence, using hourly system data from the MAVIR VER dataset between 2022 and 2025.
-The goal is to understand when and why Hungary relies most on electricity imports, identify critical stress hours, evaluate planning accuracy, and assess how targeted demand‑side and supply‑side interventions could reduce import dependence. The project combines exploratory data analysis (EDA), statistical diagnostics, scenario simulation, and machine‑learning‑based forecasting.
+# 🇭🇺 Hungarian Electricity Net Import Analysis & Forecasting
 
-# Project Idea
-Annual electricity import ratios often hide the real system risk. While yearly averages may look acceptable, imports are highly concentrated in specific hours, especially during winter evening peaks.
-This project takes a time‑resolved (hourly) approach to:
+This project presents an end-to-end data analysis and forecasting pipeline focused on Hungary’s electricity net import dependence, using hourly system data from the MAVIR VER dataset (2022–2025).
 
-Identify high‑risk import periods
-Quantify structural drivers such as load, domestic production, and time patterns
-Evaluate planned vs. actual net import accuracy
-Simulate realistic import‑reduction scenarios
-Forecast short‑term net import using machine learning
+The goal is to understand **when and why Hungary relies on electricity imports**, identify critical stress hours, evaluate planning accuracy, and assess how targeted demand-side and supply-side interventions can reduce import dependence.
 
-The results support data‑driven energy policy and system planning, shifting focus from annual averages to critical hours.
+The project combines:
+- Exploratory Data Analysis (EDA)
+- Statistical diagnostics
+- Scenario simulation
+- Machine learning-based forecasting
 
-#Dataset
-Dataset used: MAVIR VER – Tényleges Nettó Forgalmi Óránkénti Kumulált Adatok
-File: VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx
-Sheet: Exportált adatok
-Time range: January 2022 – January 2026 (hourly)
+---
 
-# Key Columns
+## 🎯 Project Idea
+
+Annual electricity import ratios often hide real system risk. While yearly averages may appear acceptable, imports are highly concentrated in specific hours—especially during **winter evening peaks**.
+
+This project uses an hourly, time-resolved approach to:
+
+- Identify high-risk import periods  
+- Quantify structural drivers (load, domestic production, time patterns)  
+- Evaluate planned vs actual net import accuracy  
+- Simulate realistic import-reduction scenarios  
+- Forecast short-term net import  
+
+---
+
+## 📂 Dataset
+
+- **Source**: MAVIR VER – Hourly Net System Flow Data  
+- **File**: `VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx`  
+- **Sheet**: `Exportált adatok`  
+- **Time range**: January 2022 – January 2026 (hourly)  
+
+---
+
+## 📊 Key Columns
 
 | Column                      | Description                              |
 |-----------------------------|------------------------------------------|
@@ -31,169 +46,156 @@ Time range: January 2022 – January 2026 (hourly)
 | Planned Import / Export     | Scheduled cross-border electricity flows |
 | Network Losses              | Transmission and distribution losses     |
 
-# Derived Metrics
+---
 
-- Net import (import − export)
-- Import share (relative to system load)
-- Planning error (actual vs planned)
-- Time features (hour, month, season, weekend)
+## ⚙️ Derived Metrics
 
-Data Quality Checks
-Before analysis, the pipeline performs automated checks:
+- Net import (import − export)  
+- Import share (relative to system load)  
+- Planning error (actual vs planned)  
+- Time features (hour, month, season, weekend)  
 
-Removal of placeholder and all‑NaN rows
-Timezone‑aware timestamp parsing (DST safe)
-Detection of duplicate timestamps (none found)
-Missing value diagnostics (none significant)
-Verification of hourly continuity (no missing hours)
+---
 
-The final dataset contains 35,064 clean hourly observations.
+## 🧹 Data Quality Checks
 
-Exploratory Data Analysis (EDA)
-The project produces a comprehensive EDA with over 30 generated visualizations, including:
-Time‑Series Analysis
+Before analysis, the pipeline performs:
 
-Monthly mean load, domestic production, and net import
-Annual net import share (sum‑based)
-Cumulative net import over time
+- Removal of placeholder and all-NaN rows  
+- Timezone-aware timestamp parsing (DST-safe)  
+- Duplicate timestamp detection (none found)  
+- Missing value diagnostics (none significant)  
+- Hourly continuity validation (no gaps detected)  
 
-Distribution & Extremes
+**Final dataset**: 35,064 clean hourly observations  
 
-Net import histogram with p95 and p99 thresholds
-Identification of top 1% worst import hours
-Hour‑of‑day and month distributions of extreme hours
-Duration curve (sorted net import hours)
+---
 
-Temporal Patterns
+## 📈 Exploratory Data Analysis (EDA)
 
-Hour‑of‑day profiles (overall and by season)
-Weekday vs weekend profiles
-Heatmaps:
+The project generates 30+ visualizations covering:
 
-Month × hour
-Day‑of‑week × hour
-Year × month (daily net import)
+### Time Series
+- Monthly mean load, production, and net import  
+- Annual net import share  
+- Cumulative net import  
 
+### Distribution & Extremes
+- Net import distribution (p95, p99 thresholds)  
+- Top 1% worst import hours  
+- Duration curve  
 
+### Temporal Patterns
+- Hour-of-day profiles (overall & seasonal)  
+- Weekday vs weekend behavior  
+- Heatmaps:
+  - Month × hour  
+  - Day-of-week × hour  
+  - Year × month  
 
-Planning Accuracy
+### Planning Accuracy
+- Planned vs actual comparison  
+- Monthly and hourly error (MAE)  
+- Error distributions  
 
-Planned vs actual net import scatter
-Monthly and hourly plan error (MAE)
-Distribution of planning errors
+### Advanced Diagnostics
+- Rolling z-score anomaly detection  
+- STL seasonal decomposition  
+- Correlation analysis  
+- Quantile bands and boxplots  
 
-Advanced Diagnostics
+All figures are saved in `eda_outputs/`.
 
-Rolling z‑score anomaly detection
-STL seasonal decomposition of daily net import
-Correlation heatmap
-Quantile “fan charts” by hour
-Boxplots by hour and by month
+---
 
-All figures are saved in chronological order to eda_outputs/.
+## ⚡ Scenario Analysis
 
-Import Reduction Scenario Simulator
-A scenario module estimates how targeted interventions affect imports:
-Example scenario
+A simulation module evaluates how demand-side interventions affect imports.
 
-Winter evenings (17:00–22:00, Nov–Feb)
-2% load reduction
-Net import assumed to change proportionally
+### Example Scenario
+- Winter evenings (17:00–22:00, Nov–Feb)  
+- 2% load reduction  
 
-Result:
+### Result
+- ~0.2% reduction in annual net import  
+- Larger impact during peak stress hours  
 
-~0.2% reduction in annual net import
-Disproportionately larger reduction during peak stress hours
+A sensitivity curve shows how increasing peak reduction affects total imports.
 
-A sensitivity curve shows how increasing peak‑shaving intensity affects total import reduction.
+---
 
-Driver Analysis (Interpretable Model)
-A Ridge regression with time‑series cross‑validation is used to understand which factors drive net import:
-Features include:
+## 🧠 Driver Analysis (Interpretable Model)
 
-System load
-Domestic production
-Hour of day
-Day of week
-Month
-Weekend indicator
+A Ridge regression model with time-series cross-validation is used to identify key drivers of net import.
 
-Model coefficients are visualized as a proxy for feature importance, providing interpretability rather than prediction accuracy.
+**Features:**
+- System load  
+- Domestic production  
+- Hour, day, month  
+- Weekend indicator  
 
-Forecasting: Net Import Prediction (XGBoost)
-To predict short‑term net import, an XGBoost regression model is trained using:
-Features
+Model coefficients provide interpretable insights into system dynamics.
 
-Lagged net import values (1h, 7h, 14h)
-Hour
-Day of week
-Month
-Weekend indicator
+---
 
-Train/Test Split
+## 🤖 Forecasting: Net Import Prediction
 
-Time‑based 80% training / 20% testing split
+An XGBoost model is used for short-term forecasting.
 
-Performance
+### Features
+- Lagged net import (1h, 7h, 14h)  
+- Time-based features  
 
-MAE: ~150
-RMSE: ~219
+### Performance
+- **MAE**: ~150  
+- **RMSE**: ~219  
 
-A time‑series plot compares actual vs predicted net import on the test period, showing the model captures daily dynamics and seasonal structure.
+The model captures both daily patterns and seasonal structure.
 
-Outputs
-The pipeline generates:
-Visual outputs
+---
 
-33 PNG figures saved in eda_outputs/
-Ordered to tell a coherent analytical story
+## 📦 Outputs
 
-Data exports
+### Visuals
+- 33 PNG figures (`eda_outputs/`)  
+- Ordered to follow the analytical narrative  
 
-hour_profile_summary.csv
-top200_net_import_hours.csv
-annual_net_import_share.csv
+### Data Exports
+- `hour_profile_summary.csv`  
+- `top200_net_import_hours.csv`  
+- `annual_net_import_share.csv`  
 
-These outputs can be directly used in reports, presentations, or dashboards
+---
 
-How to Run
-1. Install dependencies
-   pip install pandas numpy matplotlib openpyxl statsmodels scikit-learn xgboost
+## ▶️ How to Run
 
-2. Place dataset in project folder
-   VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx
-3. Run analysis
-   python analysis_script.py
-4. View results
+```bash
+pip install pandas numpy matplotlib openpyxl statsmodels scikit-learn xgboost
 
-Open eda_outputs/
-Start from 01_*.png to follow the EDA narrative
+python analysis_script.py
 
-Project Structure
 project/
 │
-├── VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx
+├── data.xlsx
 ├── analysis_script.py
 ├── README.md
 │
 ├── eda_outputs/
-│   ├── 01_monthly_means_load_prod_netimport.png
+│   ├── 01_*.png
 │   ├── ...
-│   ├── 33_heatmap_year_month_daily_netimport.png
-│   ├── hour_profile_summary.csv
-│   ├── top200_net_import_hours.csv
-│   └── annual_net_import_share.csv
+│   ├── 33_*.png
+│   ├── *.csv
 
-#Technologies Used
+Technologies Used
 Python
 Pandas, NumPy
 Matplotlib
-Statsmodels (STL decomposition)
-Scikit‑learn (Ridge, time‑series CV)
+Statsmodels (STL)
+Scikit-learn
 XGBoost
 OpenPyXL
 
-#Team Members
-Balás Bence Balázs
+👥 Team Members
+Balázs Bence Balázs
 Kupcsik András
 Abigail Wanjiru Kamau
