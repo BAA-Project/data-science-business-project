@@ -198,16 +198,16 @@ The model captures both daily patterns and seasonal structure.
 ```text
 project/
   VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx   # Input dataset
-  analysis_script.py                                          # Main analysis and forecasting script
-  README.md                                                   # Project documentation
-  eda_outputs/                                                # Generated figures and CSV summaries
-    01_monthly_means_load_prod_netimport.png                  # Monthly averages
+  analysis_script.py                                            # Main analysis and forecasting script
+  README.md                                                     # Project documentation
+  eda_outputs/                                                  # Generated figures and CSV summaries
+    01_monthly_means_load_prod_netimport.png                    # Monthly averages
     ...
-    33_heatmap_year_month_daily_netimport.png                 # Seasonal heatmap
-    hour_profile_summary.csv                                  # Hour-of-day statistics
-    top200_net_import_hours.csv                               # Extreme import hours
-    annual_net_import_share.csv                               # Annual import dependency
-
+    33_heatmap_year_month_daily_netimport.png                   # Seasonal heatmap
+    hour_profile_summary.csv                                    # Hour-of-day statistics
+    top200_net_import_hours.csv                                 # Extreme import hours
+    annual_net_import_share.csv                                 # Annual import dependency
+ ```
 ---
 Technologies Used
 
@@ -226,3 +226,4 @@ Team Members
 Balázs Bence Balázs
 Kupcsik András
 Abigail Wanjiru Kamau
+---
