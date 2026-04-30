@@ -171,29 +171,29 @@ The model captures both daily patterns and seasonal structure.
 
 ### 1. Install dependencies
 
-    ```bash
+    
     pip install pandas numpy matplotlib openpyxl statsmodels scikit-learn xgboost
-    ```
+    
 
 ### 2. Place the dataset in the project folder
 
-    ```text
+    
     VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx
-    ```
+    
 
 ### 3. Run the analysis script
 
-    ```bash
+    
     python analysis_script.py
-    ```
+    
 
 ### 4. View outputs
 
-    ```text
+    
     All figures and CSV files are saved in the eda_outputs/ directory.
     Open PNG files in numeric order (01–33).
-    ```
-
+    
+##
 project/
 │
 ├── data.xlsx
@@ -206,7 +206,7 @@ project/
 │   ├── 33_*.png
 │   ├── *.csv
 
-#Technologies Used:
+##Technologies Used:
 Python
 Pandas, NumPy
 Matplotlib
@@ -215,7 +215,7 @@ Scikit-learn
 XGBoost
 OpenPyXL
 
-👥 Team Members
+##👥 Team Members
 Balázs Bence Balázs
 Kupcsik András
 Abigail Wanjiru Kamau
