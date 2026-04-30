@@ -211,19 +211,19 @@ project/
 ---
 Technologies Used
 
-Python
-Pandas, NumPy
-Matplotlib
-Statsmodels (STL)
-Scikit-learn
-XGBoost
-OpenPyXL
+-Python
+-Pandas, NumPy
+-Matplotlib
+-Statsmodels (STL)
+-Scikit-learn
+-XGBoost
+-OpenPyXL
 
 ---
 
 Team Members
 
-Balázs Bence Balázs
-Kupcsik András
-Abigail Wanjiru Kamau
+-Balázs Bence Balázs
+-Kupcsik András
+-Abigail Wanjiru Kamau
 ---
