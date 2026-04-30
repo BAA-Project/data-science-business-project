@@ -209,21 +209,21 @@ project/
     annual_net_import_share.csv                                 # Annual import dependency
  ```
 ---
-Technologies Used
+## 🛠️ Technologies Used
 
--Python
--Pandas, NumPy
--Matplotlib
--Statsmodels (STL)
--Scikit-learn
--XGBoost
--OpenPyXL
+- Python
+- Pandas, NumPy
+- Matplotlib
+- Statsmodels (STL)
+- Scikit-learn
+- XGBoost
+- OpenPyXL
 
 ---
 
-Team Members
+## 👥 Team Members
 
--Balázs Bence Balázs
--Kupcsik András
--Abigail Wanjiru Kamau
+- Balázs Bence Balázs
+- Kupcsik András
+- Abigail Wanjiru Kamau
 ---
