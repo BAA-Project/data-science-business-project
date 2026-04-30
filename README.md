@@ -224,6 +224,6 @@ project/
 ## 👥 Team Members
 
 - Balázs Bence Balázs
-- Kupcsik András
 - Abigail Wanjiru Kamau
+- Kupcsik András
 ---
