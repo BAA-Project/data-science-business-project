@@ -167,10 +167,13 @@ The model captures both daily patterns and seasonal structure.
 
 ---
 
-## ▶️ How to Run
+##  How to Run Locally
 
 ```bash
 pip install pandas numpy matplotlib openpyxl statsmodels scikit-learn xgboost
+
+1.Place dataset in project folder
+2.Run:
 
 python analysis_script.py
 
@@ -186,7 +189,7 @@ project/
 │   ├── 33_*.png
 │   ├── *.csv
 
-Technologies Used
+Technologies Used:
 Python
 Pandas, NumPy
 Matplotlib
