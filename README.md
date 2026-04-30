@@ -167,7 +167,7 @@ The model captures both daily patterns and seasonal structure.
 
 ---
 
-`## How to Run
+ How to Run
 
 ### 1. Install dependencies
 
@@ -191,9 +191,10 @@ The model captures both daily patterns and seasonal structure.
 
     
     All figures and CSV files are saved in the eda_outputs/ directory.
-    Open PNG files in numeric order (01–33).
+    Open PNG files in numeric order (01–33)
     
-##
+---    
+
 project/
 │
 ├── data.xlsx
@@ -206,7 +207,10 @@ project/
 │   ├── 33_*.png
 │   ├── *.csv
 
-##Technologies Used:
+---
+
+---
+Technologies Used:
 Python
 Pandas, NumPy
 Matplotlib
@@ -215,7 +219,9 @@ Scikit-learn
 XGBoost
 OpenPyXL
 
-##👥 Team Members
+---
+👥 Team Members
 Balázs Bence Balázs
 Kupcsik András
 Abigail Wanjiru Kamau
+---
