@@ -195,19 +195,20 @@ The model captures both daily patterns and seasonal structure.
     
 ---    
 
-project/
+## Project Structure
 
-│
-├── data.xlsx
+```text
+project/
+├── VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx
 ├── analysis_script.py
 ├── README.md
-│
-├── eda_outputs/
-│   ├── 01_*.png
-│   ├── ...
-│   ├── 33_*.png
-│   ├── *.csv
-
+└── eda_outputs/
+    ├── 01_monthly_means_load_prod_netimport.png
+    ├── ...
+    ├── 33_heatmap_year_month_daily_netimport.png
+    ├── hour_profile_summary.csv
+    ├── top200_net_import_hours.csv
+    └── annual_net_import_share.csv
 
 ---
 Technologies Used:
