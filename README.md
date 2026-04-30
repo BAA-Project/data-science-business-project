@@ -196,6 +196,7 @@ The model captures both daily patterns and seasonal structure.
 ---    
 ```md
 ## Project Structure
+
 ```text
 project/
   VER tényleges Nettó Forgalmi Óránkénti kumulált adatok.xlsx   # Input dataset
