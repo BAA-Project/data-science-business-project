@@ -193,8 +193,6 @@ The model captures both daily patterns and seasonal structure.
     All figures and CSV files are saved in the eda_outputs/ directory.
     Open PNG files in numeric order (01–33)
     
----    
-```md
 ## Project Structure
 
 ```text
@@ -211,8 +209,7 @@ project/
     annual_net_import_share.csv                               # Annual import dependency
 
 ---
-
-Technologies Used:
+Technologies Used
 
 Python
 Pandas, NumPy
@@ -223,9 +220,9 @@ XGBoost
 OpenPyXL
 
 ---
- Team Members
 
-- Balázs Bence Balázs
-- Kupcsik András
-- Abigail Wanjiru Kamau
----
+Team Members
+
+Balázs Bence Balázs
+Kupcsik András
+Abigail Wanjiru Kamau
